@@ -9,7 +9,7 @@ pipeline {
         stage('Build Docker Image'){
             steps{
                 script {
-                    sh '/usr/local/bin/docker build -t testapp-image .'
+                    sh 'docker build -t testapp-image .'
                 }
             }
         }
@@ -17,7 +17,7 @@ pipeline {
         stage('Run Docker Container'){
             steps{
                 script {
-                    sh '/usr/local/bin/docker run -p 8090:80 testapp-image .'
+                    sh 'docker run -p 8090:80 testapp-image .'
                 }
             }
         }
