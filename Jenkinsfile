@@ -1,11 +1,17 @@
 pipeline {
     agent any
     stages{
-        stage('Clone Repository'){
-            steps{
-                git url: 'https://github.com/ChakraHs/angular_jenkins_docker'
+        stage('Hello') {
+            steps {
+                // Display a message indicating successful Git checkout
+                echo 'Hello to jenkins.'
             }
         }
+        // stage('Clone Repository'){
+        //     steps{
+        //         git url: 'https://github.com/ChakraHs/angular_jenkins_docker'
+        //     }
+        // }
         stage('Display Message') {
             steps {
                 // Display a message indicating successful Git checkout
