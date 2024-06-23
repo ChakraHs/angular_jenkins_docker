@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    ports:
+      - "9393:80"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - internalnet
+
+networks:
+  internalnet:
+    driver: bridge
