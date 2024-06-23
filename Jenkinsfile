@@ -18,19 +18,33 @@ pipeline {
                 echo 'Git checkout successful! Repository cloned.'
             }
         }
-        stage('Build Docker Image'){
+        // stage('Build Docker Image'){
+        //     steps{
+        //         script {
+        //             sh '/usr/bin/docker build -t testJenkinsApp-image .'
+        //         }
+        //     }
+        // }
+
+        // stage('Run Docker Container'){
+        //     steps{
+        //         script {
+        //             sh '/usr/bin/docker run -p 8090:80 testJenkinsApp-image .'
+        //         }
+        //     }
+        // }
+
+        stage('Build and Run with Docker Compose'){
             steps{
                 script {
-                    sh '/usr/bin/docker build -t testapp-image .'
+                    sh '/usr/local/bin/docker-compose -p angular_nginx_second up --build'
                 }
             }
         }
-
-        stage('Run Docker Container'){
-            steps{
-                script {
-                    sh '/usr/bin/docker run -p 8090:80 testapp-image .'
-                }
+        stage('Display Message Docker') {
+            steps {
+                // Display a message indicating successful Git checkout
+                echo 'Docker compose pass successful!'
             }
         }
     }
