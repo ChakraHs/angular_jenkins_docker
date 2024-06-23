@@ -16,7 +16,10 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t testapp-image .'
+                    // Running inside a node block to ensure proper workspace and executor
+                    node {
+                        sh 'docker build -t testapp-image .'
+                    }
                 }
             }
         }
@@ -24,7 +27,10 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh 'docker run -p 8090:80 testapp-image'
+                    // Running inside a node block to ensure proper workspace and executor
+                    node {
+                        sh 'docker run -p 8090:80 testapp-image'
+                    }
                 }
             }
         }
@@ -33,7 +39,10 @@ pipeline {
     post {
         always {
             echo 'Cleaning up...'
-            sh 'docker system prune -f'
+            // Pruning Docker system inside a node block
+            node {
+                sh 'docker system prune -f'
+            }
         }
         success {
             echo 'Build and deployment successful!'
