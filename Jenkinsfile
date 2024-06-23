@@ -37,7 +37,7 @@ pipeline {
         stage('Build and Run with Docker Compose'){
             steps{
                 script {
-                    sh '/usr/local/bin/docker-compose -p angular_nginx_second up --build'
+                    sh '/usr/local/bin/docker-compose -p angular_nginx_second up --build -d'
                 }
             }
         }
