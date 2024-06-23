@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    tools {
-        dockerTool 'TestAppAngularDocker'
-    }
     stages{
         stage('Clone Repository'){
             steps{
