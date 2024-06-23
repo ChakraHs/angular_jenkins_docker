@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Clone Repository'){
             steps{
-                git tool: 'Default Git', url: 'https://github.com/ChakraHs/angular_jenkins_docker'
+                Default Git 'https://github.com/ChakraHs/angular_jenkins_docker'
             }
         }
         stage('Build Docker Image'){
