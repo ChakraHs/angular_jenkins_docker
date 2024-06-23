@@ -1,6 +1,9 @@
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: angular_nginx_second:latest
     ports:
       - "9393:80"
     environment:
