@@ -33,7 +33,7 @@ pipeline {
     post {
         always {
             echo 'Cleaning up...'
-            sh 'docker system prune -f'
+            // sh 'docker system prune -f'
         }
         success {
             echo 'Build and deployment successful!'
