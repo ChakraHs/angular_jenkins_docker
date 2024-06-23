@@ -7,11 +7,11 @@ pipeline {
                 echo 'Hello to jenkins.'
             }
         }
-        // stage('Clone Repository'){
-        //     steps{
-        //         git url: 'https://github.com/ChakraHs/angular_jenkins_docker'
-        //     }
-        // }
+        stage('Clone Repository'){
+            steps{
+                git branch: 'main', url: 'https://github.com/ChakraHs/angular_jenkins_docker.git'
+            }
+        }
         stage('Display Message') {
             steps {
                 // Display a message indicating successful Git checkout
