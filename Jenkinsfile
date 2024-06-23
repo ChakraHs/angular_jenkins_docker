@@ -18,20 +18,20 @@ pipeline {
                 echo 'Git checkout successful! Repository cloned.'
             }
         }
-        // stage('Build Docker Image'){
-        //     steps{
-        //         script {
-        //             sh '/usr/local/bin/docker build -t testapp-image .'
-        //         }
-        //     }
-        // }
+        stage('Build Docker Image'){
+            steps{
+                script {
+                    sh '/usr/local/bin/docker build -t testapp-image .'
+                }
+            }
+        }
 
-        // stage('Run Docker Container'){
-        //     steps{
-        //         script {
-        //             sh '/usr/local/bin/docker run -p 8090:80 testapp-image .'
-        //         }
-        //     }
-        // }
+        stage('Run Docker Container'){
+            steps{
+                script {
+                    sh '/usr/local/bin/docker run -p 8090:80 testapp-image .'
+                }
+            }
+        }
     }
 }
