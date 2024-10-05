@@ -44,7 +44,7 @@
         stage('Display Message Docker') {
             steps {
                 // Display a message indicating successful Git checkout
-                echo 'Docker compose pass successful push!'
+                echo 'Docker compose pass successful!'
             }
         }
     }
