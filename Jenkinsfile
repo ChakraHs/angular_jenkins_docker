@@ -15,7 +15,7 @@
         stage('Display Message') {
             steps {
                 // Display a message indicating successful Git checkout
-                echo 'Git checkout successful! Repository cloned.'
+                echo 'Git checkout successful! Repository cloned. ='
             }
         }
         // stage('Build Docker Image'){
