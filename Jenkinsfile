@@ -1,4 +1,4 @@
-pipeline {
+﻿pipeline {
     agent any
     stages{
         stage('Hello') {
@@ -44,8 +44,9 @@ pipeline {
         stage('Display Message Docker') {
             steps {
                 // Display a message indicating successful Git checkout
-                echo 'Docker compose pass successful!'
+                echo 'Docker compose pass successful push!'
             }
         }
     }
 }
+
