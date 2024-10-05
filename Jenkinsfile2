@@ -34,13 +34,13 @@ pipeline {
         //     }
         // }
 
-        stage('Build and Run with Docker Compose'){
-            steps{
-                script {
-                    sh '/usr/local/bin/docker-compose up --build -d'
-                }
-            }
-        }
+        // stage('Build and Run with Docker Compose'){
+        //     steps{
+        //         script {
+        //             sh '/usr/local/bin/docker-compose up --build -d'
+        //         }
+        //     }
+        // }
         stage('Display Message Docker') {
             steps {
                 // Display a message indicating successful Git checkout
